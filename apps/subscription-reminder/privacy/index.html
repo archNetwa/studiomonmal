@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 / Privacy Policy | 구독알라미 by Studio Monmal</title>
+<meta name="description" content="구독알라미 by Studio Monmal — 개인정보처리방침 / Privacy Policy. 한국어 / English.">
+<style>body{font-family:Arial,"Noto Sans KR",sans-serif;max-width:820px;margin:0 auto;padding:40px 20px 80px;line-height:1.75;color:#222;overflow-wrap:anywhere}h1{margin-bottom:8px}h2{margin-top:32px}.sub{color:#666}a{color:#1769e0}nav,.lang{margin:24px 0;padding:12px 16px;background:#f5f7fa;border-radius:10px}.card{border:1px solid #ddd;border-radius:14px;padding:20px;margin:16px 0}hr{margin:48px 0;border:0;border-top:1px solid #ddd}a:focus-visible{outline:2px solid #1769e0;outline-offset:4px}@media(max-width:400px){body{padding:24px 16px 48px}.card{padding:16px}}</style>
+<link rel="canonical" href="https://archnetwa.github.io/studiomonmal/apps/subscription-reminder/privacy/">
+</head>
+<body>
+<header><p class="sub">Studio Monmal · Apps · 구독알라미</p><h1>개인정보처리방침 / Privacy Policy</h1><p class="sub">구독알라미<br>by Studio Monmal</p></header>
+<nav aria-label="구독알라미"><a href="../">구독알라미</a> · <a href="../privacy/">개인정보처리방침 / Privacy</a> · <a href="../terms/">이용약관 / Terms</a> · <a href="../support/">지원 / Support</a></nav>
+<div class="lang"><a href="#ko" lang="ko">한국어</a> | <a href="#en" lang="en">English</a></div>
+<main>
+<section id="ko" lang="ko" aria-label="한국어">
+<h2>1. 적용 대상과 개발자</h2>
+<p>본 개인정보처리방침은 Studio Monmal이 제공하는 Android 앱 구독알라미에만 적용됩니다. 구독알라미은 개인용 구독 관리, Wallet 잔액 기록, 통계 및 알림을 제공하며 별도의 회원가입이나 자체 사용자 계정 서버가 없습니다.</p>
+<h2>2. 처리하는 정보와 목적</h2>
+<p>사용자가 입력하는 구독명, 금액·통화·결제주기·날짜, 알림 설정, 상태·색상·선택한 이미지, 결제수단 이름이나 Wallet 연결, 계정 메모·일반 메모·해지 링크를 구독 관리와 표시·계산·알림에 사용합니다. Wallet에는 이름·통화·현재 잔액·알림 기준·메모·선택한 이미지를 저장합니다. 테마·언어·정렬·환율과 갱신 시각·복구용 식별 정보도 저장합니다. Wallet은 실제 금융계좌가 아니라 사용자가 직접 기록하는 잔액입니다.</p>
+<h2>3. 로컬 저장과 계정 메모</h2>
+<p>데이터는 앱 전용 SQLite 및 SharedPreferences에 저장됩니다. SharedPreferences는 현재 저장과 검증된 복구·migration fallback에도 사용됩니다. 앱은 별도 데이터 암호화를 제공하지 않습니다. 계정 메모는 비밀정보가 아닌 관리 메모이며 비밀번호, 토큰, 복구 코드, 결제 인증 정보나 카드 번호를 입력하지 마세요. 입력한 메모는 평문 백업에 포함될 수 있습니다.</p>
+<h2>4. 외부 통신</h2>
+<p>환율 갱신 시 HTTPS로 api.frankfurter.app에 KRW 및 USD/TRY/INR/NGN/PKR 통화 코드를 요청하고, 필요 시 open.er-api.com의 KRW 환율을 요청합니다. 앱은 이 요청에 구독·Wallet 데이터, 메모, 이미지 또는 계정 식별자를 넣지 않습니다. 서버와 네트워크 사업자는 접속 IP, 요청 시각 등 통신 정보를 받을 수 있으며 이들의 기록 보관·처리는 해당 사업자 정책에 따릅니다. 환율은 오래된 캐시일 때 또는 사용자가 새로고침할 때 갱신됩니다.</p>
+<h2>5. 제3자와 공유</h2>
+<p>현재 앱에는 광고 SDK, 사용자 행동 Analytics SDK, 자체 서버 업로드, 자동 개발사 Cloud Sync 또는 원격 push가 없습니다. Studio Monmal은 앱에 입력한 기록을 자체 서버로 자동 수집하지 않습니다. 사용자가 백업을 공유하거나 클라우드 파일 제공자를 선택하면 선택한 앱·제공자에 파일이 전달될 수 있습니다. 시스템 기기 백업은 아래와 같이 별도로 적용됩니다. 문의 이메일을 보내면 사용자가 보낸 내용은 이메일을 통해 Studio Monmal에 전달되므로 비밀번호나 불필요한 개인 데이터를 보내지 마세요.</p>
+<h2>6. 수동 백업과 복원</h2>
+<p>Export는 구독, Wallet, 저장한 카드 이름, 환율을 검증된 평문 JSON 파일로 내보냅니다. 메모 및 선택한 이미지도 포함될 수 있으나 언어·테마 등 모든 앱 설정의 완전 백업은 아닙니다. 암호화나 비밀번호 보호 기능은 없습니다. 안전한 보관·공유 대상을 선택하세요. Import는 지원되는 새 형식과 기존 백업을 검증한 뒤 해당 데이터를 교체합니다. 복원 전 필요하면 현재 데이터를 먼저 내보내세요.</p>
+<h2>7. Android 기기 백업과 캐시</h2>
+<p>Android Auto Backup 및 기기 간 이전은 SQLite 데이터베이스와 일반 SharedPreferences 설정을 포함할 수 있습니다. 이는 Studio Monmal 자체 Cloud Sync가 아니며 OS 설정·백업 제공자·기기에 따라 동작합니다. 앱은 오래된 일부 내보내기 임시 파일을 이후 실행/내보내기 시 가능한 범위에서 정리하고 최근 공유 파일을 보호합니다. 공유 직후 모든 사본의 즉시 삭제를 보장하지 않습니다.</p>
+<h2>8. 알림과 권한</h2>
+<p>인터넷, 알림 전송, 진동 및 부팅 후 알림 복원 권한을 사용합니다. 알림은 Android OS에 로컬로 예약되며 구독명·금액·Wallet 부족액 등 유용한 내용을 포함할 수 있습니다. Android private visibility와 OS 잠금화면 설정을 존중하며 보안 잠금화면의 상세 노출을 줄입니다. 정확한 알람 권한은 사용하지 않습니다. OS·절전·기기 상태로 전달이 지연되거나 누락될 수 있습니다.</p>
+<h2>9. 보관과 삭제</h2>
+<p>앱 데이터에는 자동 보관 만료일이 없습니다. 앱에서 구독·카드·Wallet을 확인 후 삭제하거나 Android 설정에서 앱 저장공간을 지우고 앱을 제거할 수 있습니다. 로컬 앱 저장공간은 OS 규칙에 따라 제거됩니다. 외부로 내보낸 파일, 공유 대상의 사본 및 OS 백업은 앱 삭제만으로 자동 삭제되지 않으며 사용자가 별도로 관리해야 합니다. 재설치 시 OS 백업에서 데이터가 복원될 수 있습니다.</p>
+<h2>10. 로그와 진단</h2>
+<p>현재 release 앱에는 사용자 행동 분석이나 개발사 로그 업로드가 없습니다. 개발용 debug 빌드의 알림 진단은 예약 시각, 내부 식별자와 성공/예약 확인 결과만 기록하며 구독명·금액·메모·알림 내용을 기록하지 않습니다. OS나 선택한 외부 서비스의 진단은 해당 플랫폼 정책에 따릅니다.</p>
+<h2>11. 연령 관련 안내</h2>
+<p>앱은 나이·생년월일을 요청하거나 아동을 식별하는 계정 기능을 제공하지 않습니다. 이 설명은 특정 대상 연령에 대한 약속이 아니며 스토어에 표시된 대상 연령 및 보호자·플랫폼 요구사항을 확인하세요.</p>
+<h2>12. 변경 및 문의</h2>
+<p>기능이나 데이터 처리 방식이 바뀌면 이 페이지를 갱신하고 필요한 중요 변경을 페이지 또는 앱 업데이트로 안내합니다. 개발자/배포자: Studio Monmal. 문의: <a href="mailto:StudioMonmal@gmail.com">StudioMonmal@gmail.com</a>. 시행일: 2026-10-01.</p>
+</section>
+<hr>
+<section id="en" lang="en" aria-label="English">
+<h2>1. Scope and developer</h2>
+<p>This policy applies only to 구독알라미, the Android subscription-management app provided by Studio Monmal. 구독알라미 offers subscription organization, recorded Wallet balances, Statistics and reminders. It has no signup or developer-operated user account server.</p>
+<h2>2. Information and purposes</h2>
+<p>The app uses user-entered subscription names, amounts/currencies/cycles/dates, reminder settings, status/colors/chosen images, payment-method labels or Wallet links, non-secret account notes, memos and cancellation-link text for organization, display, calculations and local reminders. Wallet records include names, currencies, current balances, alert thresholds, memos and chosen images. Theme, language, sorting, exchange-rate cache/timestamps and recovery identifiers are also stored. A Wallet is a manually recorded balance, not a real financial account.</p>
+<h2>3. Local storage and account notes</h2>
+<p>Records are stored in app-private SQLite and SharedPreferences. Preferences remain an active persistence and verified migration/fallback recovery source. The app adds no application-level data encryption. Account notes are non-secret organizational metadata: do not enter passwords, tokens, recovery codes, payment credentials or card numbers. Notes may be included in plaintext backups.</p>
+<h2>4. External communication</h2>
+<p>Exchange refresh sends HTTPS requests for KRW and USD/TRY/INR/NGN/PKR currency codes to api.frankfurter.app and, when needed, requests KRW rates from open.er-api.com. The app does not attach subscription/Wallet records, notes, images or account identifiers to these requests. Endpoints and network providers can receive connection information such as IP addresses and request times; their logging and processing follow their own policies. Refresh occurs with stale cache or on a user-requested refresh.</p>
+<h2>5. Third parties and sharing</h2>
+<p>The current app contains no advertising SDK, behavioral analytics SDK, automatic developer-server upload, developer cloud sync or remote push service. Studio Monmal does not automatically receive the records entered in the app. Explicit backup sharing or cloud file selection may transfer a file to the chosen app/provider. OS backup is separately described below. Support emails deliver the content you choose to send to Studio Monmal through email; do not send passwords or unnecessary personal data.</p>
+<h2>6. Manual backup and restore</h2>
+<p>Export creates a validated plaintext JSON file containing subscriptions, Wallets, saved card labels and exchange rates, including saved notes and chosen images where present. It is not a complete backup of every preference such as language or theme. No backup encryption or password protection is provided. Choose safe storage and sharing destinations. Import validates supported current/legacy files and replaces the represented data. Export current records first when needed.</p>
+<h2>7. Android device backup and cache</h2>
+<p>Android Auto Backup/device transfer may include the SQLite database and ordinary SharedPreferences. This is an OS facility, not Studio Monmal cloud sync, and availability depends on OS settings, the backup provider and device. Older matching export cache files receive best-effort cleanup on a later launch/export while recent handoffs are protected. Immediate deletion of all copies after sharing is not guaranteed.</p>
+<h2>8. Notifications and permissions</h2>
+<p>The app uses Internet, posting notifications, vibration and boot recovery permissions. Notifications are scheduled locally with Android and can show useful subscription names, amounts or Wallet shortfall details. Android private visibility and OS lockscreen preferences reduce details on a secure lockscreen. The app does not request exact-alarm permission. OS, battery or device conditions can delay or prevent delivery.</p>
+<h2>9. Retention and deletion</h2>
+<p>Local records have no automatic expiry. Confirm deletion of subscriptions/cards/Wallets in the app, or clear app storage/uninstall through Android settings. The OS removes local app storage under its normal rules. Exported files, recipient copies and OS backups are not automatically deleted by uninstall and must be managed separately. OS backup may restore data after reinstall.</p>
+<h2>10. Logs and diagnostics</h2>
+<p>The current release app has no behavioral analytics or developer log upload. Debug-build reminder diagnostics record trigger times, internal identifiers and scheduling/pending results, not subscription names, amounts, notes or notification content. OS or chosen service diagnostics follow those platforms' policies.</p>
+<h2>11. Age-related information</h2>
+<p>The app does not request age/date of birth or provide child-identifying accounts. This is not a target-age claim; consult the store audience information and applicable parent/platform requirements.</p>
+<h2>12. Changes and contact</h2>
+<p>This page is updated when features or processing change; material changes may be communicated here or through app updates. Developer/Publisher: Studio Monmal. Contact: <a href="mailto:StudioMonmal@gmail.com">StudioMonmal@gmail.com</a>. Effective: 2026-10-01.</p>
+</section>
+</main>
+<footer><p class="sub">구독알라미 by Studio Monmal · <a href="mailto:StudioMonmal@gmail.com">StudioMonmal@gmail.com</a></p></footer>
+</body>
+</html>
