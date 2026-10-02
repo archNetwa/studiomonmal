@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>알림전달자 | Notification Relay | Studio Monmal</title>
+<meta name="description" content="알림전달자 / Notification Relay. by Studio Monmal. 한국어 / English.">
+<style>body{font-family:Arial,"Noto Sans KR",sans-serif;max-width:820px;margin:0 auto;padding:40px 20px 80px;line-height:1.75;color:#222;overflow-wrap:anywhere}h1{margin-bottom:8px}h2{margin-top:32px}.sub{color:#666}a{color:#1769e0}nav,.lang{margin:24px 0;padding:12px 16px;background:#f5f7fa;border-radius:10px}.card{border:1px solid #ddd;border-radius:14px;padding:20px;margin:16px 0}hr{margin:48px 0;border:0;border-top:1px solid #ddd}a:focus-visible{outline:2px solid #1769e0;outline-offset:4px}@media(max-width:400px){body{padding:24px 16px 48px}.card{padding:16px}}</style>
+<link rel="canonical" href="https://archnetwa.github.io/studiomonmal/apps/notification-relay/">
+</head>
+<body>
+<header>
+<p class="sub">Studio Monmal · Apps · 알림전달자 / Notification Relay</p>
+<h1>알림전달자</h1>
+<p class="sub" lang="en">Notification Relay<br>by Studio Monmal</p>
+<p class="sub">개발자/배포자 / Developer/Publisher: Studio Monmal<br>마지막 업데이트 / Last updated: <time datetime="2026-10-02">2026-10-02</time></p>
+</header>
+<nav aria-label="앱 문서 / App documents">
+<a href="./">알림전달자 / Notification Relay</a> ·
+<a href="./privacy/">개인정보처리방침 / Privacy Policy</a> ·
+<a href="./terms/">이용약관 / Terms of Service</a> ·
+<a href="./support/">지원 / Support</a>
+</nav>
+<div class="lang"><a href="#ko" lang="ko">한국어</a> | <a href="#en" lang="en">English</a></div>
+<main>
+<section id="ko" lang="ko" aria-label="한국어">
+
+<h2>Android 메시지와 선택 앱 알림을 전달</h2>
+<p>알림전달자는 Android에서 수신한 SMS, MMS 본문과 이미지, 사용자가 선택한 앱의 알림을 사용자가 설정한 Telegram 또는 Discord로 자동 전달하는 앱입니다. 이 안내는 Android 버전 1.1.4 / versionCode 6의 동작을 기준으로 합니다.</p>
+<h2>주요 기능</h2>
+<ul>
+<li>수신 SMS 자동 전달과 MMS 본문·이미지 전달</li>
+<li>사용자가 선택한 앱의 알림 제목·본문 전달</li>
+<li>SMS/MMS 발신자 규칙과 메시지 본문 키워드 필터</li>
+<li>알림 include/exclude 조건과 전달 대상 앱 선택</li>
+<li>Telegram 전용, Discord 전용, Both(양쪽), Telegram 실패 시 Discord fallback 정책</li>
+<li>백그라운드 전달, 재시도와 중복 방지, 제한적인 SMS/MMS 누락·정체 복구</li>
+<li>선택적 저배터리 알림과 예약된 기기 상태 보고</li>
+<li>설정 JSON 백업·복원, 파일 저장과 Android 공유</li>
+</ul>
+<h2>사용자가 정하는 전달 대상</h2>
+<p>조건을 통과한 메시지와 MMS 이미지는 HTTPS로 Telegram Bot API 또는 Discord webhook에 직접 전송됩니다. 일반 전달은 Studio Monmal 소유 중계 서버를 거치지 않습니다. Telegram fallback은 Telegram의 영구 실패 이후에 사용되며, 재시도 가능한 실패에는 Telegram을 먼저 재시도합니다.</p>
+<p>알림은 앱 선택을 확인한 뒤 선택 앱의 제목·본문만 추출합니다. 알림의 이미지나 첨부파일은 전달하지 않습니다. 설정 백업의 연결정보 포함은 기본 OFF이며, 사용자가 명시적으로 ON한 내보내기에는 연결정보가 포함될 수 있습니다.</p>
+<h2>전달 환경과 정책</h2>
+<p>Android·기기 절전 정책, 권한, 네트워크 또는 외부 API 상태에 따라 전달과 복구가 지연되거나 실패할 수 있습니다. 중요한 메시지는 원래 수신 앱에서도 확인하세요.</p>
+<p>데이터 접근·전송·보존은 <a href="./privacy/">개인정보처리방침 / Privacy Policy</a>, 이용 조건은 <a href="./terms/">이용약관 / Terms of Service</a>, 설정 및 문제 해결은 <a href="./support/">지원 / Support</a>에서 확인할 수 있습니다.</p>
+</section>
+<hr>
+<section id="en" lang="en" aria-label="English">
+
+<h2>Relay Android messages and selected-app notifications</h2>
+<p>Notification Relay automatically forwards received SMS, MMS text and images, and notifications from apps you select to your configured Telegram or Discord destination. This information describes Android version 1.1.4 / versionCode 6.</p>
+<h2>Features</h2>
+<ul>
+<li>Automatic forwarding of received SMS and MMS text/images</li>
+<li>Forwarding notification titles and text from user-selected apps</li>
+<li>SMS/MMS sender rules and message-body keyword filters</li>
+<li>Notification include/exclude conditions and application selection</li>
+<li>Telegram only, Discord only, Both, and Telegram-to-Discord fallback policies</li>
+<li>Background relay, retries, duplicate prevention, and limited recovery of missed or stalled SMS/MMS</li>
+<li>Optional low-battery alerts and scheduled device status reports</li>
+<li>Settings JSON backup/restore, local saving, and Android sharing</li>
+</ul>
+<h2>Destinations you configure</h2>
+<p>Eligible messages and MMS images are sent directly over HTTPS to the Telegram Bot API or a Discord webhook. Normal relay does not pass through a Studio Monmal relay server. Telegram fallback is used after a permanent Telegram failure; retryable Telegram failures retry Telegram first.</p>
+<p>Notification titles and text are extracted only after checking that the app is selected. Notification images and attachments are not relayed. Settings exports exclude connection credentials by default; credentials can be included when you explicitly opt in for that export.</p>
+<h2>Delivery conditions and policies</h2>
+<p>Android/device power policies, permissions, network conditions, or external APIs can delay or prevent delivery and recovery. Check important messages in the original receiving app as well.</p>
+<p>See the <a href="./privacy/">Privacy Policy</a> for data access, transmission and retention, the <a href="./terms/">Terms of Service</a> for usage conditions, and <a href="./support/">Support</a> for setup and troubleshooting.</p>
+</section>
+</main>
+<footer><p class="sub">알림전달자 / Notification Relay by Studio Monmal · <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a><br><a href="../../">Studio Monmal</a></p></footer>
+</body>
+</html>
