@@ -53,7 +53,7 @@
         if(busy||!connection||!response||typeof response.credential!=='string')return;
         credential=response.credential;invalidate();el('sign-in').replaceChildren();el('options').hidden=false;show('signedIn');
       }});
-      google.accounts.id.renderButton(el('sign-in'),{type:'standard',theme:'outline',size:'large',text:'signin_with',width:280});el('loginHelp').hidden=false;show('login');
+      google.accounts.id.renderButton(el('sign-in'),{type:'standard',theme:'outline',size:'large',text:'signin_with',width:Math.max(200,Math.min(280,el('sign-in').clientWidth||280))});el('loginHelp').hidden=false;show('login');
     } catch(error){show(Object.prototype.hasOwnProperty.call(text[lang],error.message)?error.message:'unavailable');el('connect').disabled=false;}
     finally{busy=false;}
   });
