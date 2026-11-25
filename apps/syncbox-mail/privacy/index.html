@@ -14,7 +14,7 @@
   <p class="sub">Studio Monmal · SyncBox Mail</p>
   <h1>개인정보처리방침</h1>
   <p lang="en">Privacy Policy</p>
-  <p class="sub">기준 버전 / Covered version 0.1.4<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-26">2026-11-26</time></p>
+  <p class="sub">기준 버전 / Covered version 0.1.5<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-26">2026-11-26</time></p>
 </header>
 <nav aria-label="앱 문서 / App documents">
   <a href="../">SyncBox Mail</a>
@@ -36,7 +36,7 @@
   </ul>
 
   <h2>3. 통신과 제3자 처리</h2>
-  <p>메일 조회는 <code>mail.google.com</code>과 <code>gmail.googleapis.com</code>, OAuth 계정 확인은 <code>openidconnect.googleapis.com</code>에 HTTPS로 직접 요청합니다. 사용자가 계정 로그인을 선택하면 <code>accounts.google.com</code>의 Google 로그인 화면을 엽니다. 웹 세션으로 메일을 처리할 때는 열린 Gmail 탭을 사용하며, 필요한 경우 백그라운드 Gmail 탭을 임시로 열어 연결합니다. 완료 후 사용 중이 아닌 임시 탭은 닫습니다. OAuth 연결에는 <code>gmail.modify</code>와 <code>openid</code> 범위를 사용합니다.</p>
+  <p>메일 조회는 <code>mail.google.com</code>과 <code>gmail.googleapis.com</code>, OAuth 계정 확인은 <code>openidconnect.googleapis.com</code>에 HTTPS로 직접 요청합니다. 사용자가 계정 로그인을 선택하면 <code>accounts.google.com</code>의 Google 로그인 화면을 엽니다. 웹 세션의 메일 변경 요청은 확장 프로그램의 백그라운드에서 Gmail로 직접 보냅니다. 메일 처리용 Gmail 창이나 탭을 자동으로 만들지 않습니다. 읽지 않은 메일을 다시 조회해 반영 여부를 확인한 뒤 표시를 갱신합니다. OAuth 연결에는 <code>gmail.modify</code>와 <code>openid</code> 범위를 사용합니다.</p>
   <p>Studio Monmal은 확장의 이메일·계정 정보·토큰을 수집하는 서버를 운영하지 않습니다. 확장 데이터는 광고, 분석 추적, 데이터 판매, 신용도 판단·대출 또는 AI 학습에 사용하지 않으며 이러한 목적으로 제3자에게 제공하지 않습니다. Chrome과 운영체제는 알림 표시를 위해 제목·보낸 사람·본문 미리보기·계정 주소를 처리할 수 있습니다. 알림은 사용자가 설정에서 끌 수 있습니다.</p>
 
   <h2>4. 저장 위치와 보존 기간</h2>
@@ -57,7 +57,7 @@
     <li><code>alarms</code>는 Chrome 실행 중 기본 30초 간격으로 Gmail을 확인하는 작업을 예약합니다. 실행 시점은 Chrome·기기·네트워크 상태에 따라 지연될 수 있습니다.</li>
     <li><code>notifications</code>는 새 메일과 사용자가 요청한 테스트 알림을 표시합니다.</li>
     <li><code>storage</code>는 계정·설정·조회 상태를 로컬에 저장하고 메일 미리보기를 세션에 보관합니다.</li>
-    <li>Gmail 호스트 접근과 콘텐츠 스크립트는 로그인 계정·읽지 않은 메일 조회 및 사용자가 선택한 계정의 메일 처리에 사용합니다. 계정 주소를 재확인한 뒤 지정된 Gmail 계정 페이지·받은편지함 피드·메일 동작 주소로만 요청합니다. Gmail API와 OpenID Connect 호스트 접근은 승인된 계정의 메일 작업과 계정 확인에 사용합니다.</li>
+    <li>Gmail 호스트 접근은 로그인 계정·읽지 않은 메일 조회 및 사용자가 선택한 계정의 메일 처리에 사용합니다. 콘텐츠 스크립트는 열린 Gmail 탭에서 제한된 계정·받은편지함 조회만 수행합니다. 계정 주소를 재확인한 뒤 지정된 Gmail 계정 페이지·받은편지함 피드·메일 동작 주소로만 요청합니다. Gmail API와 OpenID Connect 호스트 접근은 승인된 계정의 메일 작업과 계정 확인에 사용합니다.</li>
   </ul>
 
   <h2>8. 문의와 문서 사이트</h2>
@@ -77,7 +77,7 @@
   </ul>
 
   <h2>3. Connections and third-party processing</h2>
-  <p>Mail requests go directly over HTTPS to <code>mail.google.com</code> and <code>gmail.googleapis.com</code>. OAuth account verification uses <code>openidconnect.googleapis.com</code>. Choosing account sign-in opens Google's sign-in page at <code>accounts.google.com</code>. Web-session actions use an open Gmail tab or temporarily open a background Gmail tab if needed. A temporary tab is closed after the operation when it is not in active use. OAuth connections request <code>gmail.modify</code> and <code>openid</code>.</p>
+  <p>Mail requests go directly over HTTPS to <code>mail.google.com</code> and <code>gmail.googleapis.com</code>. OAuth account verification uses <code>openidconnect.googleapis.com</code>. Choosing account sign-in opens Google's sign-in page at <code>accounts.google.com</code>. Web-session mail changes are sent directly to Gmail from the extension's background worker. They do not automatically create a Gmail window or tab. The extension rechecks unread mail to confirm changes before updating the display. OAuth connections request <code>gmail.modify</code> and <code>openid</code>.</p>
   <p>Studio Monmal operates no server that collects extension emails, account data, or tokens. Extension data is not used or provided to third parties for advertising, analytics tracking, data sales, creditworthiness or lending decisions, or AI training. Chrome and the operating system may process subjects, senders, snippets, and account addresses to display notifications. You can turn notifications off in settings.</p>
 
   <h2>4. Storage and retention</h2>
@@ -98,7 +98,7 @@
     <li><code>alarms</code> schedules mailbox checks every 30 seconds while Chrome runs. Chrome, device conditions, or connectivity may delay execution.</li>
     <li><code>notifications</code> displays new-mail notices and user-requested test notifications.</li>
     <li><code>storage</code> keeps accounts, preferences, and check state locally and mail previews in session storage.</li>
-    <li>Gmail host access and content scripts support reading signed-in accounts and unread mail and applying user-selected mailbox actions. After rechecking the account address, requests are limited to fixed Gmail account pages, inbox feeds, and mail-action endpoints. Gmail API and OpenID Connect host access support authorized mailbox actions and account verification.</li>
+    <li>Gmail host access supports account and unread-mail queries and user-selected mailbox actions. Content scripts perform only restricted account and inbox reads in an already-open Gmail tab. After rechecking the account address, requests are limited to fixed Gmail account pages, inbox feeds, and mail-action endpoints. Gmail API and OpenID Connect host access support authorized mailbox actions and account verification.</li>
   </ul>
 
   <h2>8. Contact and documentation website</h2>
