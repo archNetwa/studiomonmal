@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="SyncBox Mail 계정 자동 감지, Google 권한, 알림과 데이터 삭제 안내입니다.">
+  <title>SyncBox Mail 지원 및 데이터 삭제 / Support and data deletion | Studio Monmal</title>
+  <link rel="canonical" href="https://archnetwa.github.io/studiomonmal/apps/syncbox-mail/support/">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header>
+  <p class="sub">Studio Monmal · SyncBox Mail</p>
+  <h1>지원 및 데이터 삭제</h1>
+  <p lang="en">Support and data deletion</p>
+  <p class="sub">기준 버전 / Covered version 0.1.2<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-25">2026-11-25</time></p>
+</header>
+<nav aria-label="앱 문서 / App documents">
+  <a href="../">SyncBox Mail</a>
+  <a href="../privacy/">개인정보처리방침 / Privacy Policy</a>
+  <a href="../terms/">이용약관 / Terms of Service</a>
+  <a href="./" aria-current="page">지원 / Support</a>
+</nav>
+<div class="lang"><a href="#ko">한국어</a><a href="#en" lang="en">English</a></div>
+<main>
+<section id="ko" lang="ko">
+  <h2>계정이 표시되지 않을 때</h2>
+  <p>같은 Chrome 프로필의 Gmail 계정 메뉴에 해당 계정이 로그인되어 있는지 확인하세요. Gmail 탭을 하나 열어 두고 SyncBox Mail 상단의 새로고침을 누르세요. 계정 및 설정에서도 감지된 계정을 확인할 수 있습니다.</p>
+  <h2>읽음·보관·휴지통 버튼을 사용하려면</h2>
+  <p>계정 및 설정의 Google 권한 연결을 선택하세요. Chrome이 권한 연결을 제공한 계정은 메일 작업 버튼을 사용할 수 있습니다. 자동 감지된 계정의 연결 권한에 따라 버튼 제공 여부가 달라집니다.</p>
+  <h2>보내는 계정과 작성 창</h2>
+  <p>메일 쓰기를 누르고 계정 주소를 선택하세요. 계정이 하나면 바로 그 계정의 Gmail 작성 창을 엽니다. 받는 사람과 내용을 입력한 뒤 Gmail에서 직접 발송하며, 발송 전 보내는 주소를 확인할 수 있습니다.</p>
+  <h2>데스크톱 알림이 보이지 않을 때</h2>
+  <p>계정 및 설정에서 Windows 데스크톱 알림을 켜고 알림 테스트를 누르세요. Chrome 접수 메시지가 표시되면 운영체제 알림 센터와 Google Chrome 알림 허용 설정을 확인하세요. 메일은 Chrome 실행 중 기본 30초 간격으로 확인하며, 절전·네트워크·Google 상태에 따라 알림이 지연될 수 있습니다.</p>
+  <h2>접근 중단과 데이터 삭제</h2>
+  <ul>
+    <li>자동 감지를 중단하려면 같은 Chrome 프로필의 Gmail에서 로그아웃하거나 <code>chrome://extensions</code>에서 SyncBox Mail을 사용 중지하세요.</li>
+    <li>Google 서버의 권한 철회는 <a href="https://myaccount.google.com/connections">Google 계정의 서드 파티 연결</a>에서 승인한 앱의 액세스를 삭제하세요. 확장의 연결 해제는 로컬 연결과 메일 캐시를 정리합니다.</li>
+    <li>확장을 제거하면 해당 프로필의 확장 저장 데이터가 삭제됩니다. Gmail 메일과 변경한 상태는 Gmail에서, 운영체제 알림은 알림 센터에서 관리하세요.</li>
+  </ul>
+  <h2>문의</h2>
+  <p><a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a>로 SyncBox Mail 버전, Chrome 버전, 문제가 발생한 기능과 개인정보를 지운 오류 문구를 보내주세요. 실제 메일 내용·인증 코드·토큰·쿠키는 첨부하지 마세요.</p>
+</section>
+<hr>
+<section id="en" lang="en">
+  <h2>If an account is missing</h2>
+  <p>Check that the account is signed into Gmail in the same Chrome profile. Keep one Gmail tab open and use Refresh at the top of SyncBox Mail. Detected accounts also appear in account settings.</p>
+  <h2>Using read, archive, and trash actions</h2>
+  <p>Choose Google authorization in account settings. Mailbox action buttons become available for accounts Chrome has authorized. Availability depends on the authorization for each automatically detected account.</p>
+  <h2>Sending account and compose window</h2>
+  <p>Select Compose and choose an address. With one account, its Gmail compose window opens directly. Enter recipients and content and send from Gmail, where you can verify the sending address.</p>
+  <h2>If a desktop notification is missing</h2>
+  <p>Enable desktop notifications in settings and select the notification test. If Chrome reports acceptance, check your operating system's notification center and Google Chrome notification permission. Checks run every 30 seconds while Chrome runs. Sleep, connectivity, and Google service conditions may delay notifications.</p>
+  <h2>Stopping access and deleting data</h2>
+  <ul>
+    <li>Sign out of Gmail in the same Chrome profile or disable SyncBox Mail in <code>chrome://extensions</code> to stop automatic detection.</li>
+    <li>Revoke server-side access through <a href="https://myaccount.google.com/connections">third-party connections in your Google Account</a>. Disconnecting inside the extension removes the local connection and its mail cache.</li>
+    <li>Uninstalling deletes extension data in that profile. Manage Gmail messages and their changed states in Gmail and clear operating-system notifications in the notification center.</li>
+  </ul>
+  <h2>Contact</h2>
+  <p>Email <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a> with your SyncBox Mail and Chrome versions, the affected feature, and a redacted error message. Please omit real messages, verification codes, tokens, and cookies.</p>
+</section>
+</main>
+<footer><a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a> · <a href="../../../">Studio Monmal</a></footer>
+</body>
+</html>
