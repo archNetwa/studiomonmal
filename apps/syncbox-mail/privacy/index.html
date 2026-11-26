@@ -14,7 +14,7 @@
   <p class="sub">Studio Monmal · SyncBox Mail</p>
   <h1>개인정보처리방침</h1>
   <p lang="en">Privacy Policy</p>
-  <p class="sub">기준 버전 / Covered version 0.1.5<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-26">2026-11-26</time></p>
+  <p class="sub">기준 버전 / Covered version 0.1.6<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-26">2026-11-26</time></p>
 </header>
 <nav aria-label="앱 문서 / App documents">
   <a href="../">SyncBox Mail</a>
@@ -32,7 +32,7 @@
   <ul>
     <li><strong>계정과 인증 정보.</strong> Gmail 이메일 주소, Google 계정 식별자와 로그인 계정의 세션 순서로 계정을 감지하고 확인합니다. 사용자가 메일 처리 기능을 실행하고 Chrome의 선택적 쿠키 권한을 허용하면, 선택한 계정 경로의 Gmail 작업 토큰과 Gmail 페이지의 메일 처리용 식별정보를 사용합니다. 이 정보는 해당 계정의 읽음·보관·휴지통 요청을 Gmail에 보내는 데 사용합니다. 별도의 Google 권한 연결을 선택하면 Chrome Identity가 제공한 OAuth 액세스 토큰을 Google API 요청에 사용합니다.</li>
     <li><strong>이메일과 Gmail 웹사이트 콘텐츠.</strong> 계정 주소, 발신자·수신자 등의 메일 헤더, 제목, 수신 시각, 메시지·대화 식별자, 읽음·받은편지함 상태, 읽지 않은 메일 수와 본문 미리보기를 조회합니다. Gmail 페이지의 로그인 계정 목록과 받은편지함 피드에서 필요한 정보를 추출하며, 직접 조회가 어려우면 열린 Gmail 탭에서 계정과 받은편지함 정보를 읽습니다. 이 정보는 계정 목록, 네 가지 메일 보기, 배지와 알림에 사용합니다.</li>
-    <li><strong>사용자 설정과 동작.</strong> 화면 모드, 메일 보기 방식, 알림 사용 여부와 계정 표시 순서를 저장합니다. 읽음·보관·휴지통과 계정별 읽음 정리는 사용자가 선택한 계정에서 실행합니다. 웹 로그인 세션에서는 받은편지함을 재확인하고 한 번에 최대 15통씩 나누어 처리하며, 많은 메일은 Gmail 화면에서 직접 관리할 수도 있습니다. 편지쓰기는 선택한 계정의 Gmail 작성 창을 열며, 작성 내용과 받는 사람은 Gmail에서 입력하고 발송합니다.</li>
+    <li><strong>사용자 설정과 동작.</strong> 화면 모드, 메일 보기 방식, 알림 사용 여부와 계정 표시 순서를 저장합니다. 읽음·보관·휴지통과 계정별 읽음 정리는 사용자가 선택한 계정에서 실행합니다. Windows 알림의 읽음·휴지통 버튼은 해당 알림 제목의 메일 한 통에 적용하며, 알림을 닫으면 메일 상태를 바꾸지 않습니다. 처리 완료·실패 여부를 알림 기록에 보관해 중복 실행을 방지합니다. 웹 로그인 세션에서는 받은편지함을 재확인하고 한 번에 최대 15통씩 나누어 처리하며, 많은 메일은 Gmail 화면에서 직접 관리할 수도 있습니다. 편지쓰기는 선택한 계정의 Gmail 작성 창을 열며, 작성 내용과 받는 사람은 Gmail에서 입력하고 발송합니다.</li>
   </ul>
 
   <h2>3. 통신과 제3자 처리</h2>
@@ -73,7 +73,7 @@
   <ul>
     <li><strong>Account and authentication information.</strong> Gmail addresses, Google account identifiers, and account session order identify and verify accounts. When you choose a mail action and grant Chrome's optional cookie permission, the extension uses the Gmail action token for the selected account path and mail-action identifiers from Gmail pages. They authorize read, archive, and trash requests to Gmail for that account. If you separately connect Google permissions, Chrome Identity provides an OAuth access token for Google API requests.</li>
     <li><strong>Email and Gmail website content.</strong> The extension reads account addresses, mail headers such as senders and recipients, subjects, timestamps, message and thread identifiers, read and inbox status, unread counts, and message snippets. It extracts the required information from Gmail account pages and inbox feeds. If direct access fails, it reads account and inbox information through an open Gmail tab. This data supports account lists, four mailbox views, badges, and notifications.</li>
-    <li><strong>Preferences and actions.</strong> Theme, mailbox view, notification preference, and account order are stored. Read, archive, trash, and inbox cleanup run only for the account selected by the user. The web-session path rechecks the inbox and processes up to 15 messages at a time. You can also manage larger amounts directly in Gmail. Composing opens the selected account's Gmail compose window. You enter recipients and message content and send the message in Gmail.</li>
+    <li><strong>Preferences and actions.</strong> Theme, mailbox view, notification preference, and account order are stored. Read, archive, trash, and inbox cleanup run only for the account selected by the user. Notification Read and Trash buttons apply to the single message in that notification's title. Dismissing a notification does not change mail status. Completion and failure flags in notification records prevent duplicate actions. The web-session path rechecks the inbox and processes up to 15 messages at a time. You can also manage larger amounts directly in Gmail. Composing opens the selected account's Gmail compose window. You enter recipients and message content and send the message in Gmail.</li>
   </ul>
 
   <h2>3. Connections and third-party processing</h2>
