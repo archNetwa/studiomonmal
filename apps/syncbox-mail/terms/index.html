@@ -14,7 +14,7 @@
   <p class="sub">Studio Monmal · SyncBox Mail</p>
   <h1>이용약관</h1>
   <p lang="en">Terms of Service</p>
-  <p class="sub">시행일 및 업데이트 / Effective and updated <time datetime="2026-11-25">2026-11-25</time></p>
+  <p class="sub">기준 버전 / Covered version 0.1.16<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-28">2026-11-28</time></p>
 </header>
 <nav aria-label="앱 문서 / App documents">
   <a href="../">SyncBox Mail</a>
@@ -25,25 +25,27 @@
 <div class="lang"><a href="#ko">한국어</a><a href="#en" lang="en">English</a></div>
 <main>
 <section id="ko" lang="ko">
-  <h2>1. 확장 프로그램의 이용</h2>
-  <p>이 약관은 Studio Monmal이 관리하는 Chrome 확장 프로그램 SyncBox Mail에 적용됩니다. 사용자는 본인이 접근할 권한이 있는 Gmail 계정으로 연결하고, Google 및 Chrome의 적용되는 서비스 조건을 준수해야 합니다.</p>
-  <h2>2. 메일 동작과 알림</h2>
-  <p>확장은 사용자가 선택한 계정과 설정을 사용합니다. 메일 쓰기는 Gmail 작성 창에서 보내는 계정·받는 사람·내용을 확인한 뒤 발송합니다. 읽음·보관·휴지통 작업은 팝업에서 사용자가 선택한 동작에 따라 처리합니다. 알림과 동기화의 동작은 로그인, 권한, 네트워크, Chrome 실행 상태 및 Google 서비스에 따라 달라질 수 있습니다.</p>
+<h2>1. 확장 프로그램의 이용</h2>
+  <p>이 약관은 Studio Monmal이 관리하는 SyncBox Mail에 적용됩니다. 본인이 접근할 권한이 있는 Gmail 계정으로 이용하고 Google·Chrome의 적용되는 서비스 조건을 준수하세요.</p>
+  <h2>2. 본문 표시·메일 처리·작성</h2>
+  <p>확장은 선택한 계정과 설정에 따라 메일을 조회합니다. 빠른 표시를 위해 최근 본문을 미리 조회할 수 있으며, 사용자가 열어 본문이 정상 표시되면 Gmail에도 자동 읽음 변경을 요청합니다. 사전 조회만 하거나 본문 로딩이 실패한 경우에는 자동 읽음 요청을 보내지 않습니다. 읽음 정리·휴지통 등은 사용자가 선택한 계정과 대상에 적용합니다. 처리 오류나 상태가 불명확할 때는 Gmail에서 실제 상태를 확인하세요.</p>
+  <p>편지쓰기는 선택한 계정의 Gmail 작성 창에서 보내는 주소·받는 사람·내용을 직접 확인한 뒤 발송합니다. 앱이 연 작성 창은 발송 완료를 감지하면 닫힙니다. 알림·동기화·세션 준비·발송 감지는 로그인·허용 권한·네트워크·Chrome과 Google 서비스 상태에 영향을 받습니다.</p>
   <h2>3. 변경과 이용 중단</h2>
-  <p>기능이나 데이터 처리 방식이 변경되면 관련 문서를 갱신합니다. 확장 프로그램을 끄거나 제거할 수 있으며, Google 권한을 연결했다면 Google 계정에서 연결을 철회할 수 있습니다. 데이터 처리와 삭제 절차는 <a href="../privacy/">개인정보처리방침</a>과 <a href="../support/">지원</a>에서 안내합니다.</p>
+  <p>기능이나 데이터 처리 방식이 바뀌면 관련 문서를 갱신합니다. 확장을 중지·제거하거나 Gmail 사이트·쿠키 접근을 제한할 수 있고, OAuth 연결은 Google 계정에서 철회할 수 있습니다. 저장·삭제 절차는 <a href="../privacy/">개인정보처리방침</a>과 <a href="../support/">지원</a>에 설명합니다.</p>
   <h2>4. 문의</h2>
-  <p>SyncBox Mail 관련 문의는 <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a>으로 보내주세요.</p>
+  <p>문의는 <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a>로 보내주세요.</p>
 </section>
 <hr>
 <section id="en" lang="en">
-  <h2>1. Using the extension</h2>
-  <p>These terms apply to SyncBox Mail, a Chrome extension managed by Studio Monmal. Use it only with Gmail accounts you are authorized to access and follow the applicable Google and Chrome service terms.</p>
-  <h2>2. Mail actions and notifications</h2>
-  <p>The extension uses the accounts and settings you select. Compose opens Gmail, where you can review the sending account, recipients, and content before sending. Read, archive, and trash operations follow actions you select in the popup. Notifications and synchronization depend on sign-in, permissions, network connectivity, Chrome, and Google services.</p>
+<h2>1. Using the extension</h2>
+  <p>These terms cover SyncBox Mail managed by Studio Monmal. Use only Gmail accounts you are authorized to access and follow applicable Google and Chrome service terms.</p>
+  <h2>2. Bodies, mail actions and composing</h2>
+  <p>The extension queries selected accounts under your settings. Recent bodies may be prepared for faster display. Opening a message and successfully displaying its body triggers a mark-as-read request to Gmail; preparation alone or a failed body load does not. Inbox cleanup, Trash and other selected actions apply to the chosen account/messages. Check actual Gmail state when a request fails or its outcome is unclear.</p>
+  <p>Compose opens Gmail for the selected account, where you review the sending address, recipients and content before sending. App-opened compose windows close when sent confirmation is detected. Notifications, synchronization, session preparation and send detection depend on sign-in, permissions, connectivity, Chrome and Google service conditions.</p>
   <h2>3. Changes and stopping use</h2>
-  <p>The relevant documents will be updated when features or data handling change. You can disable or remove the extension and revoke any Google permissions from your Google Account. See the <a href="../privacy/">Privacy Policy</a> and <a href="../support/">Support</a> for data handling and deletion instructions.</p>
+  <p>Relevant documents are updated when features or data practices change. Disable/remove the extension, restrict Gmail site/cookie access or revoke OAuth through Google. See the <a href="../privacy/">Privacy Policy</a> and <a href="../support/">Support</a> for storage/deletion.</p>
   <h2>4. Contact</h2>
-  <p>Contact <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a> with questions about SyncBox Mail.</p>
+  <p>Contact <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a>.</p>
 </section>
 </main>
 <footer><a href="../support/">지원 / Support</a> · <a href="../../../">Studio Monmal</a></footer>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'">
-  <meta name="description" content="SyncBox Mail의 Gmail 데이터 접근, Google 권한, 로컬·세션 저장과 삭제 방법을 설명합니다.">
+  <meta name="description" content="SyncBox Mail의 Gmail 전체 본문·자동 읽음, Google 권한, 사전 조회·세션 보관과 삭제 방법을 설명합니다.">
   <title>SyncBox Mail 개인정보처리방침 / Privacy Policy | Studio Monmal</title>
   <link rel="canonical" href="https://archnetwa.github.io/studiomonmal/apps/syncbox-mail/privacy/">
   <link rel="stylesheet" href="../style.css">
@@ -14,7 +14,7 @@
   <p class="sub">Studio Monmal · SyncBox Mail</p>
   <h1>개인정보처리방침</h1>
   <p lang="en">Privacy Policy</p>
-  <p class="sub">기준 버전 / Covered version 0.1.6<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-26">2026-11-26</time></p>
+  <p class="sub">기준 버전 / Covered version 0.1.16<br>시행일 및 업데이트 / Effective and updated <time datetime="2026-11-28">2026-11-28</time></p>
 </header>
 <nav aria-label="앱 문서 / App documents">
   <a href="../">SyncBox Mail</a>
@@ -25,85 +25,103 @@
 <div class="lang"><a href="#ko">한국어</a><a href="#en" lang="en">English</a></div>
 <main>
 <section id="ko" lang="ko">
-  <h2>1. 적용 범위와 처리 주체</h2>
-  <p>이 방침은 Studio Monmal이 관리하는 Chrome 확장 프로그램 SyncBox Mail에 적용됩니다. 같은 Chrome 프로필에서 로그인한 Gmail 계정의 읽지 않은 메일을 조회하고, 미리보기·배지·알림과 사용자가 선택한 메일 관리 기능을 제공합니다. 데이터는 사용자 브라우저와 Google 서비스에서 처리합니다.</p>
+<h2>1. 적용 범위와 처리 주체</h2>
+  <p>이 방침은 Studio Monmal이 관리하는 Chrome 확장 프로그램 SyncBox Mail에 적용됩니다. 같은 Chrome 프로필에 로그인된 Gmail 계정을 찾아 읽지 않은 메일과 전체 본문을 표시하고, 새 메일 알림·읽음 처리·휴지통·편지쓰기 기능을 제공합니다. 데이터는 사용자 브라우저와 Google 서비스에서 처리합니다.</p>
 
   <h2>2. 처리하는 데이터와 사용 목적</h2>
   <ul>
-    <li><strong>계정과 인증 정보.</strong> Gmail 이메일 주소, Google 계정 식별자와 로그인 계정의 세션 순서로 계정을 감지하고 확인합니다. 사용자가 메일 처리 기능을 실행하고 Chrome의 선택적 쿠키 권한을 허용하면, 선택한 계정 경로의 Gmail 작업 토큰과 Gmail 페이지의 메일 처리용 식별정보를 사용합니다. 이 정보는 해당 계정의 읽음·보관·휴지통 요청을 Gmail에 보내는 데 사용합니다. 별도의 Google 권한 연결을 선택하면 Chrome Identity가 제공한 OAuth 액세스 토큰을 Google API 요청에 사용합니다.</li>
-    <li><strong>이메일과 Gmail 웹사이트 콘텐츠.</strong> 계정 주소, 발신자·수신자 등의 메일 헤더, 제목, 수신 시각, 메시지·대화 식별자, 읽음·받은편지함 상태, 읽지 않은 메일 수와 본문 미리보기를 조회합니다. Gmail 페이지의 로그인 계정 목록과 받은편지함 피드에서 필요한 정보를 추출하며, 직접 조회가 어려우면 열린 Gmail 탭에서 계정과 받은편지함 정보를 읽습니다. 이 정보는 계정 목록, 네 가지 메일 보기, 배지와 알림에 사용합니다.</li>
-    <li><strong>사용자 설정과 동작.</strong> 화면 모드, 메일 보기 방식, 알림 사용 여부와 계정 표시 순서를 저장합니다. 읽음·보관·휴지통과 계정별 읽음 정리는 사용자가 선택한 계정에서 실행합니다. Windows 알림의 읽음·휴지통 버튼은 해당 알림 제목의 메일 한 통에 적용하며, 알림을 닫으면 메일 상태를 바꾸지 않습니다. 처리 완료·실패 여부를 알림 기록에 보관해 중복 실행을 방지합니다. 웹 로그인 세션에서는 받은편지함을 재확인하고 한 번에 최대 15통씩 나누어 처리하며, 많은 메일은 Gmail 화면에서 직접 관리할 수도 있습니다. 편지쓰기는 선택한 계정의 Gmail 작성 창을 열며, 작성 내용과 받는 사람은 Gmail에서 입력하고 발송합니다.</li>
+    <li><strong>계정과 인증 정보.</strong> Gmail 주소, Google 계정 식별자와 웹 로그인 세션 순서로 계정을 감지하고 확인합니다. Gmail 로그인 세션으로 메일을 처리할 때는 Chrome의 선택적 쿠키 권한을 요청하고, 선택 계정 경로의 Gmail 작업 토큰과 Gmail 페이지의 처리용 식별정보를 사용합니다. 별도의 Google 권한 연결을 선택하면 Chrome Identity가 제공하는 OAuth 액세스 토큰으로 Gmail API와 계정 확인 API를 호출합니다. Google 비밀번호를 읽거나 저장하지 않습니다.</li>
+    <li><strong>이메일과 웹사이트 콘텐츠.</strong> 계정 주소, 발신자·수신자 등의 헤더, 제목, 수신 시각, 메시지·대화 식별자, 읽음·받은편지함 상태, 읽지 않은 메일 수, 미리보기와 전체 본문을 조회합니다. 웹 로그인 경로는 Gmail 페이지·받은편지함 피드·메일 인쇄 응답을 사용하며, OAuth 연결 경로는 Gmail API와 필요한 텍스트 본문 파트를 사용합니다. 직접 받은편지함 조회가 어려우면 이미 열린 Gmail 탭에서 제한된 계정·피드 정보를 읽습니다.</li>
+    <li><strong>빠른 본문 표시.</strong> 클릭 후 대기 시간을 줄이기 위해 메일 갱신이 끝난 뒤 계정별 최근 두 항목을 돌아가며 최대 12개 본문을 백그라운드에서 미리 조회할 수 있습니다. 미리 조회하는 것만으로 읽음 변경 요청을 보내지는 않습니다. 표시할 본문을 해석할 때 스크립트·폼·프레임·원격 CSS와 외부 이미지의 실행·자동 로딩을 차단합니다.</li>
+    <li><strong>메일 변경.</strong> 사용자가 메일을 열어 전체 본문이 정상 표시되면 Gmail에도 읽음 변경을 요청합니다. 본문 표시 전 목록으로 돌아가거나 본문 조회가 실패하면 자동 읽음 요청을 보내지 않습니다. 실패하면 오류를 알리고 남은 메일을 다시 표시합니다. 개별 읽음·휴지통과 계정별 읽음 정리도 사용할 수 있습니다. 읽음 정리는 실행 시점까지 도착한 메일을 대상으로 하며 웹 세션에서는 최대 15통씩 나누어 처리합니다.</li>
+    <li><strong>알림과 작성 창.</strong> 알림의 읽음·휴지통 버튼은 알림 제목에 표시된 한 통에 적용하며, 알림 닫기는 메일 상태를 바꾸지 않습니다. 편지쓰기는 선택한 계정의 작은 Gmail 작성 창을 엽니다. 받는 사람과 내용은 사용자가 Gmail에서 입력·확인·발송합니다. 앱이 연 작성 창에 한해 보내기 동작과 Gmail의 발송 완료 표시를 감지해 창을 닫습니다. 이 감지 기능은 입력 중인 본문이나 받는 사람 입력값을 기록하지 않습니다.</li>
+    <li><strong>설정.</strong> 화면 모드, 네 가지 메일 보기, 알림 사용 여부와 계정 순서를 저장합니다.</li>
   </ul>
 
   <h2>3. 통신과 제3자 처리</h2>
-  <p>메일 조회는 <code>mail.google.com</code>과 <code>gmail.googleapis.com</code>, OAuth 계정 확인은 <code>openidconnect.googleapis.com</code>에 HTTPS로 직접 요청합니다. 사용자가 계정 로그인을 선택하면 <code>accounts.google.com</code>의 Google 로그인 화면을 엽니다. 웹 세션의 메일 변경 요청은 확장 프로그램의 백그라운드에서 Gmail로 직접 보냅니다. 메일 처리용 Gmail 창이나 탭을 자동으로 만들지 않습니다. 읽지 않은 메일을 다시 조회해 반영 여부를 확인한 뒤 표시를 갱신합니다. OAuth 연결에는 <code>gmail.modify</code>와 <code>openid</code> 범위를 사용합니다.</p>
-  <p>Studio Monmal은 확장의 이메일·계정 정보·토큰을 수집하는 서버를 운영하지 않습니다. 확장 데이터는 광고, 분석 추적, 데이터 판매, 신용도 판단·대출 또는 AI 학습에 사용하지 않으며 이러한 목적으로 제3자에게 제공하지 않습니다. Chrome과 운영체제는 알림 표시를 위해 제목·보낸 사람·본문 미리보기·계정 주소를 처리할 수 있습니다. 알림은 사용자가 설정에서 끌 수 있습니다.</p>
+  <p>메일 요청은 HTTPS로 <code>mail.google.com</code>과 <code>gmail.googleapis.com</code>에 직접 전송하며, OAuth 계정 확인에는 <code>openidconnect.googleapis.com</code>을 사용합니다. 사용자가 계정 추가를 선택하면 <code>accounts.google.com</code>의 Google 화면을 엽니다. OAuth 연결 범위는 <code>gmail.modify</code>와 <code>openid</code>입니다.</p>
+  <p>기존 Gmail 세션의 작업 정보가 준비되지 않았을 때 Chrome Identity의 비대화형 Google 페이지 뷰를 잠시 사용해 세션을 준비할 수 있습니다. 이 과정에서 별도의 Gmail 탭을 자동으로 만들거나 사용자 대신 새 로그인·OAuth 승인을 완료하지 않습니다. 메일 변경은 확장의 백그라운드에서 Google로 직접 보냅니다. 읽지 않은 메일의 변경은 피드를 다시 조회해 확인하며, 이미 읽은 메일의 휴지통은 피드로 라벨 변화를 확인할 수 없어 서버 요청 접수 결과로 안내합니다.</p>
+  <p>Studio Monmal은 확장의 이메일·계정 정보·토큰을 수집하는 서버를 운영하지 않습니다. 확장 데이터는 광고, 분석 추적, 판매, 신용도 판단·대출이나 AI 학습에 사용하거나 그러한 목적으로 제공하지 않습니다. Chrome과 운영체제는 알림 표시를 위해 제목·보낸 사람·본문 미리보기·계정 주소를 처리할 수 있습니다. 알림은 설정에서 끌 수 있습니다.</p>
 
-  <h2>4. 저장 위치와 보존 기간</h2>
-  <p><code>chrome.storage.local</code>에는 OAuth 연결 계정의 주소와 식별자, 감지된 계정 식별자, 설정과 표시 순서, 메일 조회의 변경 이력 위치, 확인 시각, 알림 중복 방지를 위한 메시지·대화 식별자 등의 기록을 보관합니다. 메일 제목·보낸 사람·본문 미리보기는 <code>chrome.storage.session</code>에 보관합니다. 이 세션 데이터는 Chrome 재시작 또는 확장 재로드 시 초기화됩니다.</p>
-  <p>알림 중복 방지와 웹 계정 확인용 영구 기록은 메일 조회가 성공적으로 갱신될 때 7일을 넘긴 항목을 정리하며, 알림 기록은 최대 150개, 웹 계정 확인 기록은 최대 50개를 유지합니다. 계정 표시 순서와 환경설정은 확장을 제거할 때까지 유지될 수 있습니다. OAuth 액세스 토큰은 Chrome이 관리합니다. 확장은 Gmail 작업 토큰·메일 처리용 식별정보·OAuth 액세스 토큰을 실행 메모리에서만 사용하고 자체 저장소에 기록하지 않습니다. 로컬 데이터 보호는 Chrome 프로필과 운영체제의 접근 통제에 의존합니다.</p>
+  <h2>4. 저장 위치와 보존·정리</h2>
+  <ul>
+    <li><strong>기기 내 저장.</strong> <code>chrome.storage.local</code>에는 OAuth 연결 계정의 주소·식별자, 감지된 계정 식별자, 설정·계정 순서, 조회 이력 위치와 확인 시각, 알림 중복 방지용 메시지·대화 식별자와 처리 상태를 저장합니다. 성공한 메일 갱신 시 7일을 넘긴 알림·웹 계정 확인 기록을 정리하고, 각각 최대 150개·50개로 제한합니다. 설정과 계정 순서는 제거 전까지 남을 수 있습니다.</li>
+    <li><strong>세션 메모리.</strong> 메일 목록·헤더·미리보기와 준비한 본문은 <code>chrome.storage.session</code>에 보관하며 <code>local</code>이나 <code>sync</code>에 전체 본문을 저장하지 않습니다. 공유 본문 캐시는 재사용 유효기간 5분·최대 12개·앱의 크기 계산 기준 합계 약 4MiB로 제한합니다. 만료·계정 변경·목록 변경은 다음 조회·갱신·정리 시 반영하며, 상한을 넘은 항목은 보관하지 않거나 오래된 항목부터 정리합니다.</li>
+    <li><strong>읽기 화면과 처리 기록.</strong> 열어 둔 본문과 최근 읽기 화면의 앞·뒤 이동에 필요한 본문은 현재 확장 페이지의 메모리에도 남을 수 있으며 해당 페이지를 닫거나 다시 로드하면 초기화됩니다. 읽음 후 휴지통 처리를 위해 계정·세션 순서·메시지·대화 식별자·시각·읽음 확인 여부와 앱 내부 연결 식별자를 세션에 최대 24개 보관합니다. 처리 권한은 30분만 유효하며, 새 열람·처리 시 만료 기록을 정리합니다. 이 기록에는 본문·제목·Google 인증 토큰을 넣지 않습니다.</li>
+    <li><strong>작성 창.</strong> 자동 닫기를 위해 앱이 연 창·탭의 식별자와 앱 내부 연결 식별자를 세션에 최대 40개 보관하고 해당 창·탭이 닫히면 정리합니다.</li>
+  </ul>
+  <p>세션 저장소는 메모리 영역이며 Chrome 재시작 또는 확장의 중지·재로드·업데이트 시 초기화됩니다. 시간 제한은 캐시 재사용 또는 처리 허용 기간이며, 모든 기록이 해당 시각에 즉시 물리적으로 삭제된다는 뜻은 아닙니다. OAuth 액세스 토큰은 Chrome이 관리합니다. 확장은 Gmail 작업 토큰·Gmail 페이지의 작업 세션 키·OAuth 액세스 토큰을 실행 메모리에서만 사용하고 자체 저장소에 기록하지 않습니다. 로컬 데이터 보호는 Chrome 프로필과 운영체제의 접근 통제에 의존합니다.</p>
 
   <h2>5. 접근 중단과 삭제</h2>
-  <p>자동 감지를 중단하려면 해당 Chrome 프로필의 Gmail에서 로그아웃하거나 확장을 사용 중지·제거하세요. Chrome의 확장 프로그램 세부정보에서 Gmail 사이트 접근을 제한해 웹 세션 접근을 중단할 수도 있습니다. 확장의 계정 및 설정에서 OAuth 연결을 해제하면 해당 연결 계정과 메일 캐시를 정리합니다. Gmail 로그인이 유지된 계정은 자동 감지에 계속 나타날 수 있습니다. Google 서버의 접근 권한을 철회하려면 <a href="https://myaccount.google.com/connections">Google 계정의 서드 파티 연결</a>에서 승인한 앱의 액세스를 삭제하세요.</p>
-  <p>확장을 제거하면 해당 Chrome 프로필의 확장 저장 데이터가 삭제됩니다. Gmail 원본 메일과 이미 변경한 읽음·보관·휴지통 상태는 Gmail에서 관리하며, 운영체제에 남은 알림은 알림 센터에서 따로 지울 수 있습니다.</p>
+  <p>자동 감지를 중단하려면 같은 Chrome 프로필의 Gmail에서 로그아웃하거나 확장을 중지·제거하세요. 확장 세부정보에서 Gmail 사이트 접근을 제한하거나 선택적 쿠키 권한을 철회하면 관련 웹 접근·메일 처리를 제한할 수 있습니다. OAuth 연결을 해제하면 해당 연결과 메일 캐시를 정리하지만, Gmail 웹 로그인이 유지된 계정은 자동 감지에 계속 나타날 수 있습니다. Google의 서버 측 권한은 <a href="https://myaccount.google.com/connections">Google 계정의 서드 파티 연결</a>에서 별도로 철회할 수 있습니다.</p>
+  <p>확장을 제거하면 해당 Chrome 프로필의 확장 저장 데이터가 삭제됩니다. Gmail 원본과 이미 적용한 읽음·휴지통 상태는 Gmail에서 관리하며, 운영체제에 남은 알림은 알림 센터에서 별도로 지울 수 있습니다.</p>
 
   <h2>6. Google 데이터의 제한적 사용</h2>
-  <p>Google API에서 받은 정보는 이 방침에 기재한 Gmail 조회·알림·메일 관리 기능을 제공하는 데 사용합니다. 정보의 사용과 이전은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>의 제한적 사용(Limited Use) 요건과 <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome 웹 스토어 사용자 데이터 정책</a>을 준수합니다.</p>
+  <p>Google에서 받은 정보는 이 방침의 Gmail 조회·본문 표시·알림·메일 관리 기능을 제공하는 데 사용합니다. Google API 정보의 사용과 이전은 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>의 제한적 사용(Limited Use) 요건과 <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome 웹 스토어 사용자 데이터 정책</a>을 준수합니다.</p>
 
   <h2>7. Chrome 권한의 목적</h2>
   <ul>
-    <li><code>identity</code>는 사용자가 선택한 Google 권한 연결과 OAuth 토큰 요청에 사용합니다.</li>
-    <li>선택적 <code>cookies</code> 권한은 사용자가 Gmail 로그인 세션으로 메일을 처리할 때 요청합니다. 선택한 계정 경로에 해당하는 Gmail 작업 토큰만 읽으며, 이를 해당 Gmail의 메일 변경 요청에 사용합니다.</li>
-    <li><code>alarms</code>는 Chrome 실행 중 기본 30초 간격으로 Gmail을 확인하는 작업을 예약합니다. 실행 시점은 Chrome·기기·네트워크 상태에 따라 지연될 수 있습니다.</li>
-    <li><code>notifications</code>는 새 메일과 사용자가 요청한 테스트 알림을 표시합니다.</li>
-    <li><code>storage</code>는 계정·설정·조회 상태를 로컬에 저장하고 메일 미리보기를 세션에 보관합니다.</li>
-    <li>Gmail 호스트 접근은 로그인 계정·읽지 않은 메일 조회 및 사용자가 선택한 계정의 메일 처리에 사용합니다. 콘텐츠 스크립트는 열린 Gmail 탭에서 제한된 계정·받은편지함 조회만 수행합니다. 계정 주소를 재확인한 뒤 지정된 Gmail 계정 페이지·받은편지함 피드·메일 동작 주소로만 요청합니다. Gmail API와 OpenID Connect 호스트 접근은 승인된 계정의 메일 작업과 계정 확인에 사용합니다.</li>
+    <li><code>identity</code>: 선택적 Google OAuth 연결·토큰 요청과 기존 Gmail 웹 세션의 비대화형 준비에 사용합니다.</li>
+    <li>선택적 <code>cookies</code>: 웹 로그인 계정의 본문을 열거나 메일 처리 기능을 사용할 때 요청합니다. 선택 계정 경로의 Gmail 작업 토큰을 읽어 해당 계정의 읽음·휴지통 요청에 사용합니다. 거절하면 자동 읽음이 적용되지 않을 수 있으며 안내를 표시합니다.</li>
+    <li><code>alarms</code>: Chrome 실행 중 기본 30초 간격의 메일 확인을 예약합니다. 기기·Chrome·네트워크 상태에 따라 늦어질 수 있습니다.</li>
+    <li><code>notifications</code>: 새 메일·알림 처리 오류·사용자가 요청한 테스트 알림을 표시합니다.</li>
+    <li><code>storage</code>: 계정·설정·조회 상태의 기기 저장과 메일 목록·본문·처리 기록의 세션 메모리에 사용합니다.</li>
+    <li>Gmail 호스트 접근: 계정·피드·전체 본문 조회와 선택 계정의 메일 변경에 사용합니다. Gmail 콘텐츠 스크립트는 열린 탭의 제한된 계정·피드 조회와 앱 작성 창의 발송 완료 감지를 수행합니다. Gmail API·OpenID Connect 호스트는 승인된 메일 작업과 계정 확인에 사용합니다.</li>
   </ul>
 
   <h2>8. 문의와 문서 사이트</h2>
-  <p>개인정보 문의는 <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a>로 보내주세요. 문의 내용과 회신 주소는 요청에 답하는 데 사용합니다. 문의에는 메일 본문, 토큰, 쿠키나 인증 코드를 첨부하지 마세요.</p>
-  <p>이 문서 사이트에는 분석 스크립트·입력 양식·쿠키 설정 코드가 없습니다. 호스팅 서비스인 GitHub Pages는 페이지 제공을 위해 IP 주소 등 접속 정보를 처리할 수 있습니다. 자세한 내용은 <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보처리방침</a>에서 확인할 수 있습니다. 데이터 처리 방식이 바뀌면 이 방침과 스토어 안내를 갱신합니다.</p>
+  <p>개인정보 문의는 <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a>로 보내주세요. 문의 내용·회신 주소는 답변에 사용합니다. 문의에는 메일 본문·토큰·쿠키·인증 코드를 첨부하지 마세요.</p>
+  <p>이 문서 사이트에는 분석 스크립트·입력 양식·쿠키 설정 코드가 없습니다. GitHub Pages는 페이지 제공을 위해 IP 주소 등의 접속 정보를 처리할 수 있습니다. <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보처리방침</a>을 참고하세요. 데이터 처리 방식이 바뀌면 방침과 스토어 안내를 갱신합니다.</p>
 </section>
 <hr>
 <section id="en" lang="en">
-  <h2>1. Scope and operator</h2>
-  <p>This policy applies to SyncBox Mail, a Chrome extension managed by Studio Monmal. It checks unread messages for Gmail accounts signed into the same Chrome profile and provides previews, badges, notifications, and mailbox actions selected by the user. Data is processed in your browser and through Google services.</p>
+<h2>1. Scope and operator</h2>
+  <p>This policy covers SyncBox Mail, a Chrome extension managed by Studio Monmal. It detects Gmail accounts signed into the same Chrome profile, displays unread messages and full bodies, and provides notifications, read and trash actions, and composing. Data is processed in your browser and through Google services.</p>
 
   <h2>2. Data and purposes</h2>
   <ul>
-    <li><strong>Account and authentication information.</strong> Gmail addresses, Google account identifiers, and account session order identify and verify accounts. When you choose a mail action and grant Chrome's optional cookie permission, the extension uses the Gmail action token for the selected account path and mail-action identifiers from Gmail pages. They authorize read, archive, and trash requests to Gmail for that account. If you separately connect Google permissions, Chrome Identity provides an OAuth access token for Google API requests.</li>
-    <li><strong>Email and Gmail website content.</strong> The extension reads account addresses, mail headers such as senders and recipients, subjects, timestamps, message and thread identifiers, read and inbox status, unread counts, and message snippets. It extracts the required information from Gmail account pages and inbox feeds. If direct access fails, it reads account and inbox information through an open Gmail tab. This data supports account lists, four mailbox views, badges, and notifications.</li>
-    <li><strong>Preferences and actions.</strong> Theme, mailbox view, notification preference, and account order are stored. Read, archive, trash, and inbox cleanup run only for the account selected by the user. Notification Read and Trash buttons apply to the single message in that notification's title. Dismissing a notification does not change mail status. Completion and failure flags in notification records prevent duplicate actions. The web-session path rechecks the inbox and processes up to 15 messages at a time. You can also manage larger amounts directly in Gmail. Composing opens the selected account's Gmail compose window. You enter recipients and message content and send the message in Gmail.</li>
+    <li><strong>Accounts and authentication.</strong> Gmail addresses, Google account identifiers and web-session order identify and verify accounts. Web-session mail actions request Chrome's optional cookie permission and use the Gmail action token for the selected account path and mail-action identifiers from Gmail pages. Optional Google authorization uses OAuth access tokens supplied by Chrome Identity for Gmail and account-verification APIs. The extension does not read or store Google passwords.</li>
+    <li><strong>Email and website content.</strong> The extension reads account addresses, sender/recipient headers, subjects, timestamps, message/thread identifiers, read and inbox status, unread counts, snippets and full bodies. The web path uses Gmail account pages, inbox feeds and message-print responses; the OAuth path uses Gmail APIs and required text body parts. If direct inbox queries fail, limited account/feed information can be read through an already-open Gmail tab.</li>
+    <li><strong>Preparing bodies.</strong> To reduce waiting after a click, mailbox refreshes can prepare up to 12 bodies in the background, taking recent items in turn from up to two per account. Preparation alone sends no mark-as-read request. Body rendering blocks scripts, forms, frames, remote CSS and automatic external-image loading.</li>
+    <li><strong>Mail changes.</strong> Opening a message and successfully displaying its full body triggers a mark-as-read request to Gmail. Returning to the list before display or a failed body load does not trigger automatic read. Errors are shown and remaining messages are restored. Individual Read/Trash and account-specific inbox cleanup are also available. Cleanup targets messages received by its start time; the web path handles up to 15 at a time.</li>
+    <li><strong>Notifications and compose.</strong> Read/Trash buttons on a notification affect the single message in its title; closing a notification does not change mail. Composing opens a small Gmail window for the selected account. You enter, review and send recipients and content in Gmail. Only in app-opened compose windows, the extension detects the send action and Gmail's sent confirmation to close the window. This detection does not record the draft body or recipient input values.</li>
+    <li><strong>Preferences.</strong> Theme, four mailbox views, notification preference and account order are saved.</li>
   </ul>
 
   <h2>3. Connections and third-party processing</h2>
-  <p>Mail requests go directly over HTTPS to <code>mail.google.com</code> and <code>gmail.googleapis.com</code>. OAuth account verification uses <code>openidconnect.googleapis.com</code>. Choosing account sign-in opens Google's sign-in page at <code>accounts.google.com</code>. Web-session mail changes are sent directly to Gmail from the extension's background worker. They do not automatically create a Gmail window or tab. The extension rechecks unread mail to confirm changes before updating the display. OAuth connections request <code>gmail.modify</code> and <code>openid</code>.</p>
-  <p>Studio Monmal operates no server that collects extension emails, account data, or tokens. Extension data is not used or provided to third parties for advertising, analytics tracking, data sales, creditworthiness or lending decisions, or AI training. Chrome and the operating system may process subjects, senders, snippets, and account addresses to display notifications. You can turn notifications off in settings.</p>
+  <p>HTTPS mail requests go directly to <code>mail.google.com</code> and <code>gmail.googleapis.com</code>; OAuth account verification uses <code>openidconnect.googleapis.com</code>. Choosing account sign-in opens Google's <code>accounts.google.com</code> page. OAuth requests use <code>gmail.modify</code> and <code>openid</code>.</p>
+  <p>When existing Gmail action-session information is unavailable, Chrome Identity may briefly use a non-interactive Google page view to prepare the session. This does not automatically create a separate Gmail tab or complete a new sign-in or OAuth approval for you. Mail changes go directly to Google from the background worker. Unread changes are checked through another inbox query. For an already-read message, an unread-only feed cannot verify its Trash label, so the extension reports server request acceptance.</p>
+  <p>Studio Monmal operates no server collecting extension emails, account data or tokens. Extension data is not used or provided for advertising, analytics tracking, data sales, credit/lending decisions or AI training. Chrome and the operating system may process subjects, senders, snippets and account addresses to display notifications. Notifications can be disabled in settings.</p>
 
-  <h2>4. Storage and retention</h2>
-  <p><code>chrome.storage.local</code> holds connected account addresses and identifiers, detected account identifiers, preferences and account order, mail history cursors, check timestamps, and message and thread identifiers used to prevent duplicate notifications. Subjects, senders, and snippets are held in <code>chrome.storage.session</code>, which is cleared when Chrome restarts or the extension reloads.</p>
-  <p>A successful mailbox refresh removes notification and web-account tracking entries older than seven days and limits these records to 150 notifications and 50 web-account entries. Account order and preferences may remain until the extension is removed. Chrome manages OAuth access tokens. The extension uses Gmail action tokens, mail-action identifiers, and OAuth tokens only in execution memory and does not write them to its own storage. Local data protection relies on Chrome profile and operating-system access controls.</p>
+  <h2>4. Storage and cleanup</h2>
+  <ul>
+    <li><strong>On-device storage.</strong> <code>chrome.storage.local</code> stores connected account addresses/identifiers, detected account identifiers, preferences/order, history cursors/check timestamps and notification-deduplication message/thread identifiers and action status. Successful refreshes remove notification/web-account records older than seven days, with limits of 150 and 50 respectively. Settings/order can remain until uninstall.</li>
+    <li><strong>Session memory.</strong> Lists, headers, snippets and prepared bodies use <code>chrome.storage.session</code>. Full bodies are not written to <code>local</code> or <code>sync</code>. The shared body cache has a five-minute reuse period, up to 12 items and about 4 MiB under the app's size calculation. Expiry, account/list changes are applied on subsequent queries, refreshes and cleanup. Items beyond the limits are excluded or oldest entries are removed.</li>
+    <li><strong>Reader and action records.</strong> The currently displayed body and the recent reader used for Back/Forward may also remain in the current extension page's memory until that page closes or reloads. Up to 24 session records bind account/session order, message/thread identifiers, timestamps, read confirmation and an app-local correlation identifier for Trash after read. Their action validity is 30 minutes; opening/processing messages cleans expired records. These records contain no body, subject or Google authentication token.</li>
+    <li><strong>Compose windows.</strong> Up to 40 app-created window/tab identifiers and app-local correlation identifiers are held in session storage for automatic closing and removed when the corresponding window/tab closes.</li>
+  </ul>
+  <p>Session storage is in memory and clears when Chrome restarts or the extension is disabled, reloaded or updated. Time limits describe cache reuse or action validity, not guaranteed physical deletion at that exact instant. Chrome manages OAuth access tokens. Gmail action tokens, Gmail page action-session keys and OAuth tokens are used only in execution memory and are not written to the extension's own storage. Local protection relies on Chrome-profile and operating-system access controls.</p>
 
-  <h2>5. Stopping access and deleting data</h2>
-  <p>Stop automatic detection by signing out of Gmail in the same Chrome profile or disabling or removing the extension. Restricting Gmail site access in Chrome's extension details also stops web-session access. Disconnecting an OAuth account in extension settings removes that connection and its mail cache. An account still signed into Gmail can remain visible through automatic detection. Revoke server-side Google permissions through <a href="https://myaccount.google.com/connections">third-party connections in your Google Account</a>.</p>
-  <p>Removing the extension deletes its stored data in that Chrome profile. Manage original messages and read, archive, or trash changes in Gmail. Clear operating-system notifications separately in your notification center.</p>
+  <h2>5. Stopping access and deletion</h2>
+  <p>Stop automatic detection by signing out of Gmail in the same Chrome profile or disabling/removing the extension. Restricting Gmail site access or revoking the optional cookie permission in extension details limits related web access/actions. Disconnecting OAuth removes that connection and mail cache, but an account still signed into Gmail may remain automatically visible. Revoke Google's server-side permissions separately through <a href="https://myaccount.google.com/connections">Google third-party connections</a>.</p>
+  <p>Uninstalling deletes extension storage in that profile. Original Gmail messages and completed Read/Trash changes are managed in Gmail. Clear operating-system notifications separately.</p>
 
   <h2>6. Google data and Limited Use</h2>
-  <p>Information received from Google APIs is used for the Gmail viewing, notification, and mailbox actions described here. Its use and transfer comply with the Limited Use requirements of the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> and the <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome Web Store User Data Policy</a>.</p>
+  <p>Google data is used for the Gmail viewing, body display, notification and mailbox features described here. Use and transfer of Google API information comply with the Limited Use requirements of the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> and <a href="https://developer.chrome.com/docs/webstore/program-policies/limited-use">Chrome Web Store User Data Policy</a>.</p>
 
   <h2>7. Chrome permissions</h2>
   <ul>
-    <li><code>identity</code> supports Google authorization and OAuth token requests initiated by the user.</li>
-    <li>Optional <code>cookies</code> permission is requested when you choose a mail action using your Gmail sign-in session. It reads the Gmail action token for the selected account path and uses it for that account's Gmail mail-change requests.</li>
-    <li><code>alarms</code> schedules mailbox checks every 30 seconds while Chrome runs. Chrome, device conditions, or connectivity may delay execution.</li>
-    <li><code>notifications</code> displays new-mail notices and user-requested test notifications.</li>
-    <li><code>storage</code> keeps accounts, preferences, and check state locally and mail previews in session storage.</li>
-    <li>Gmail host access supports account and unread-mail queries and user-selected mailbox actions. Content scripts perform only restricted account and inbox reads in an already-open Gmail tab. After rechecking the account address, requests are limited to fixed Gmail account pages, inbox feeds, and mail-action endpoints. Gmail API and OpenID Connect host access support authorized mailbox actions and account verification.</li>
+    <li><code>identity</code>: optional Google OAuth/token requests and non-interactive preparation of an existing Gmail web session.</li>
+    <li>Optional <code>cookies</code>: requested when opening a web-account message or using mail actions. It reads the selected account path's Gmail action token for that account's Read/Trash requests. Denial can prevent automatic read and shows guidance.</li>
+    <li><code>alarms</code>: schedules checks every 30 seconds while Chrome runs. Device, Chrome or network conditions may delay them.</li>
+    <li><code>notifications</code>: displays new mail, action errors and user-requested tests.</li>
+    <li><code>storage</code>: on-device accounts/preferences/check state and session-memory mail lists, bodies and action records.</li>
+    <li>Gmail host access: account/feed/full-body queries and selected-account mail changes. Gmail content scripts perform limited queries in open tabs and detect sent confirmations in app-opened compose windows. Gmail API/OpenID Connect hosts support authorized mail actions and account verification.</li>
   </ul>
 
   <h2>8. Contact and documentation website</h2>
-  <p>Contact <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a> about privacy. Your inquiry and reply address are used to respond. Please omit message content, tokens, cookies, and verification codes.</p>
-  <p>This documentation website contains no analytics scripts, forms, or cookie-setting code. GitHub Pages hosts it and may process access information, such as IP addresses, to serve pages. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. We update this policy and store disclosures when data practices change.</p>
+  <p>Contact <a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a> about privacy. Inquiries and reply addresses are used to respond. Please omit mail bodies, tokens, cookies and verification codes.</p>
+  <p>This documentation website contains no analytics scripts, forms or cookie-setting code. GitHub Pages may process IP addresses and other access information to serve pages. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. Data-practice changes are reflected in this policy and store disclosures.</p>
 </section>
 </main>
 <footer><a href="mailto:studiomonmal@gmail.com">studiomonmal@gmail.com</a> · <a href="../../../">Studio Monmal</a></footer>
